@@ -287,8 +287,7 @@ results = model.train(
 ## Open-Source Training Records and Weights🎞️
 
 To facilitate the reproduction of the Crowd Counting and Object Detection tasks, we have open-sourced all training records and weight files. You can download them from either Baidu Netdisk or Google Drive:
-- [🔗 Baidu Netdisk](XXX) Extraction code: `1234`
-- [🔗 Google Drive](XXX)
+Coming Soon...
 
 ## Related Projects🔗
 
