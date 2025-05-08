@@ -3,10 +3,6 @@ import os
 import torch
 from train_helper_CCtrans import Trainer
 
-def str2bool(v):
-    return v.lower() in ("yes", "true", "t", "1")
-
-
 def parse_args():
     parser = argparse.ArgumentParser(description='Train')
     parser.add_argument('--data-dir', default='./ShanghaiTech-datasets/part_A_final', help='data path')
