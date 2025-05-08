@@ -26,8 +26,9 @@
     - [2. Data Preparation](#2-data-preparation)
     - [3. Training and Testing](#3-training-and-testing)
   - [CrowdCouting](#crowdcouting)
-    - [Data Preparation](#data-preparation)
-    - [Training](#training)
+    - [1. Environment Setup](#1-environment-setup)
+    - [2. Data Preparation](#2-data-preparation)
+    - [3. Training](#3-training)
   - [ObjectDetection](#objectdetection)
     - [The train.py script](#the-trainpy-script)
 - [Open-Source Training Records and Weights🎞️](#open-source-training-records-and-weights️)
@@ -233,8 +234,31 @@ python train_ses.py \
 ```
 
 ### CrowdCouting
-#### Data Preparation
-Dataset structures:
+#### 1. Environment Setup
+
+Install the required dependencies in the `CrowdCouting` folder using `requirements.txt`. Run the following command:
+```bash
+pip install -r requirements.txt
+```
+The core libraries we used are as follows:
+```text
+torch==1.10.0+cu113
+torchvision==0.11.1+cu113
+torchaudio==0.10.0+cu113 
+numpy>=1.16.5
+scipy>=1.3.0
+opencv-python
+gdown
+pillow
+gradio
+timm==0.4.12
+wandb
+matplotlib
+```
+It is worth noting the version of timm.
+
+#### 2. Data Preparation
+After downloading the ShanghaiTech Part-A and Part-B crowd counting datasets, we organize them according to the following structure respectively:
 ```
 DATA_ROOT/
         |->train_data/
@@ -248,19 +272,20 @@ DATA_ROOT/
         |    |    |->... 
         |->test_data/  
 ```
-#### Training
-The network can be trained using the train.py script. For training on ShanghaiTech PartA with using 'Pyramid ViT' backbbone and 'SoftHGNN-SeS' module, use
+#### 3.Training
+The network can be trained using the train.py script. You may choose to train on either the ShanghaiTech Part-A or Part-B dataset. Two backbone architectures are supported: Pyramid ViT ('PVT') and Twins-PCPVT ('ALTGVT'). In the add_module option, selecting 'None' indicates that no additional modules beyond CCTrans will be added, which serves as the baseline. Alternatively, you can choose the proposed 'SoftHGNN' or 'SoftHGNN-SeS' modules. By default, we use 'PVT' as the backbone and 'SoftHGNN-SeS' as the additional module for the overall network architecture.
 ```
 python train.py --data-dir $DATA_ROOT \
-    --dataset_file 'sha' \
-    --lr 0.00001\
-    --max-epochs 4000 \
-    --val-epoch 1\
-    --batch_size 8 \
-    --device '0'\
-    --backbone 'PVT'\
-    --add_module 'SoftHGNN-SeS'    
+    --dataset 'sha' \               # or 'shb'
+    --lr 0.00001 \
+    --max-epoch 4000 \
+    --val-epoch 1 \
+    --batch-size 8 \
+    --device '0' \
+    --backbone 'PVT' \              #or 'ALTGVT'
+    --add_module 'SoftHGNN-SeS'     # Options: 'SoftHGNN-SeS', 'SoftHGNN', or 'None'
 ```
+
 ### ObjectDetection
 #### The train.py script
 ```
