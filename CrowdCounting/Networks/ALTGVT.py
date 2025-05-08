@@ -72,7 +72,7 @@ class Regression(nn.Module):
         elif module_choice == 'SoftHGNN-SeS':
             self.softhgnn_ses = SoftHGNN_SeS(
                 embed_dim=256, 
-                num_hyperedges=32, 
+                num_dyn_hyperedges=32, 
                 top_k=16, 
                 num_fixed_hyperedges=16,
                 num_heads=8, 
