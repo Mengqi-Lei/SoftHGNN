@@ -7,34 +7,28 @@ Implementation of the paper "SoftHGNN: Soft Hypergraph Neural Networks for Gener
 #### Dataset structures:
 ```
 DATA_ROOT/
-        |->train/
-        |    |->scene01/
-        |    |->scene02/
-        |    |->...
-        |->test/
-        |    |->scene01/
-        |    |->scene02/
-        |    |->...
-        |->train.list
-        |->test.list
-        |->gt_density_maps/
-        |    |->train/
-        |    |->test/  
+        |->train_data/
+        |    |->images/
+        |    |    |->IMG_1.jpg
+        |    |    |->IMG_2.jpg
+        |    |    |->...
+        |    |->ground_truth/
+        |    |    |->GT_IMG_1.mat
+        |    |    |->GT_IMG_2.mat
+        |    |    |->... 
+        |->test_data/  
 ```
 ### 2. Training
-The network can be trained using the train.py script. For training on ShanghaiTech PartA, use
+The network can be trained using the train.py script. For training on ShanghaiTech PartA with using 'Pyramid ViT' backbbone and 'SoftHGNN-SeS' module, use
 ```
-python train.py --data_root $DATA_ROOT \
-    --dataset_file SHHA \
-    --epochs 3500 \
-    --lr_drop 3500 \
-    --output_dir ./logs \
-    --checkpoints_dir ./weights \
-    --tensorboard_dir ./runs \
-    --lr 0.0001 \
-    --lr_backbone 0.00001 \
+python train.py --data-dir $DATA_ROOT \
+    --dataset_file 'sha' \
+    --lr 0.00001\
+    --max-epochs 4000 \
+    --val-epoch 1\
     --batch_size 8 \
-    --eval_freq 1 \
-    --gpu_id 0
+    --device '0'\
+    --backbone 'PVT'\
+    --add_module 'SoftHGNN-SeS'    
 ```
 ## ObjectDetection
