@@ -1,10 +1,10 @@
 # SoftHGNN
 Implementation of the paper "SoftHGNN: Soft Hypergraph Neural Networks for General Visual Recognition".
-# Getting Started🚀
-## 1.Classification
-## 2.CrowdCouting
-### Data Preparation
-#### Dataset structures:
+## Getting Started🚀
+### 1.Classification
+### 2.CrowdCouting
+#### Data Preparation
+##### Dataset structures:
 ```
 DATA_ROOT/
         |->train_data/
@@ -18,7 +18,7 @@ DATA_ROOT/
         |    |    |->... 
         |->test_data/  
 ```
-### Training
+#### Training
 The network can be trained using the train.py script. For training on ShanghaiTech PartA with using 'Pyramid ViT' backbbone and 'SoftHGNN-SeS' module, use
 ```
 python train.py --data-dir $DATA_ROOT \
@@ -31,7 +31,8 @@ python train.py --data-dir $DATA_ROOT \
     --backbone 'PVT'\
     --add_module 'SoftHGNN-SeS'    
 ```
-## 3.ObjectDetection
+### 3.ObjectDetection
+#### The train.py script
 ```
 from ultralytics import YOLO
 
