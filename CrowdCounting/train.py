@@ -24,7 +24,7 @@ def parse_args():
     parser.add_argument('--device', default='0', help='assign device')
     parser.add_argument('--num-workers', type=int, default=16,
                         help='the num of training process')
-    parser.add_argument('--crop-size', type=int, default= 256,
+    parser.add_argument('--crop-size', type=int, default=256,
                         help='the crop size of the train image')
     parser.add_argument('--wot', type=float, default=0.1, help='weight on OT loss')
     parser.add_argument('--wtv', type=float, default=0.01, help='weight on TV loss')
@@ -34,7 +34,7 @@ def parse_args():
                         help='sinkhorn iterations')
     parser.add_argument('--norm-cood', type=int, default=0, help='whether to norm cood when computing distance')
     parser.add_argument('--backbone', choices=['PVT', 'ALTGVT'], default='PVT', help='backbone selection: PVT or ALTGVT')
-    parser.add_argument('--add_module', choices=['SoftHGNN', 'SoftHGNN-SeS', 'None'], default='None', 
+    parser.add_argument('--add_module', choices=['SoftHGNN', 'SoftHGNN-SeS', 'None'], default='SoftHGNN-SeS', 
                         help='core module proposed in the paper: SoftHGNN, SoftHGNN-SeS, or None')
     parser.add_argument('--run-name', default='CCTrans', help='run name for wandb interface/logging')
     parser.add_argument('--wandb', default=0, type=int, help='boolean to set wandb logging')
