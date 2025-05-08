@@ -69,7 +69,7 @@ class Regression(nn.Module):
                 dropout=0.1
             )
             self.hyper_module = self.softhgnn
-        elif module_choice == 'SoftHGNN-SeS':
+        elif add_module_choice == 'SoftHGNN-SeS':
             self.softhgnn_ses = SoftHGNN_SeS(
                 embed_dim=256, 
                 num_dyn_hyperedges=32, 
@@ -79,7 +79,7 @@ class Regression(nn.Module):
                 dropout=0.1, 
                 lb_loss_weight=0.1)
             self.hyper_module = self.softhgnn_ses
-        elif module_choice == 'none':
+        elif add_module_choice == 'None':
             self.hyper_module = None
         else:
             raise ValueError(f"Unsupported module choice: {module_choice}")
@@ -522,10 +522,10 @@ class PCPVT(CPVTV2):
     def __init__(self, img_size=224, patch_size=4, in_chans=3, num_classes=1000, embed_dims=[64, 128, 256],
                  num_heads=[1, 2, 4], mlp_ratios=[4, 4, 4], qkv_bias=False, qk_scale=None, drop_rate=0.,
                  attn_drop_rate=0., drop_path_rate=0., norm_layer=nn.LayerNorm,
-                 depths=[4, 4, 4], sr_ratios=[4, 2, 1], block_cls=SBlock):
+                 depths=[4, 4, 4], sr_ratios=[4, 2, 1], block_cls=SBlock, add_module_choice='None'):
         super(PCPVT, self).__init__(img_size, patch_size, in_chans, num_classes, embed_dims, num_heads,
                                     mlp_ratios, qkv_bias, qk_scale, drop_rate, attn_drop_rate, drop_path_rate,
-                                    norm_layer, depths, sr_ratios, block_cls)
+                                    norm_layer, depths, sr_ratios, block_cls, add_module_choice)
 
 
 class ALTGVT(PCPVT):
@@ -535,10 +535,10 @@ class ALTGVT(PCPVT):
     def __init__(self, img_size=224, patch_size=4, in_chans=3, num_classes=1000, embed_dims=[64, 128, 256],
                  num_heads=[1, 2, 4], mlp_ratios=[4, 4, 4], qkv_bias=False, qk_scale=None, drop_rate=0.,
                  attn_drop_rate=0., drop_path_rate=0., norm_layer=nn.LayerNorm,
-                 depths=[4, 4, 4], sr_ratios=[4, 2, 1], block_cls=GroupBlock, wss=[7, 7, 7]):
+                 depths=[4, 4, 4], sr_ratios=[4, 2, 1], block_cls=GroupBlock, wss=[7, 7, 7], add_module_choice='None'):
         super(ALTGVT, self).__init__(img_size, patch_size, in_chans, num_classes, embed_dims, num_heads,
                                      mlp_ratios, qkv_bias, qk_scale, drop_rate, attn_drop_rate, drop_path_rate,
-                                     norm_layer, depths, sr_ratios, block_cls)
+                                     norm_layer, depths, sr_ratios, block_cls, add_module_choice)
         del self.blocks
         self.wss = wss
         # transformer encoder
