@@ -8,8 +8,32 @@
     <img src="assets/intro.jpg" width="80%" height="80%">
 </div>
 
+<h4>Table of Contents</h4>
 
-[TOC]
+- [Overview🔍](#overview)
+- [Tasks and Datasets📚](#tasks-and-datasets)
+  - [1. Image Classification](#1-image-classification)
+  - [2. Crowd Counting](#2-crowd-counting)
+  - [3. Object Detection](#3-object-detection)
+- [Experimental Results🏆](#experimental-results)
+  - [1. Image Classification](#1-image-classification-1)
+  - [2. Crowd Counting](#2-crowd-counting-1)
+  - [3. Object Detection](#3-object-detection-1)
+  - [4. Computational Efficiency](#4-computational-efficiency)
+- [Getting Started🚀](#getting-started)
+  - [Image Classification](#image-classification)
+    - [1. Environment Setup](#1-environment-setup)
+    - [2. Data Preparation](#2-data-preparation)
+    - [3. Training and Testing](#3-training-and-testing)
+  - [CrowdCouting](#crowdcouting)
+    - [Data Preparation](#data-preparation)
+    - [Training](#training)
+  - [ObjectDetection](#objectdetection)
+    - [The train.py script](#the-trainpy-script)
+- [Open-Source Training Records and Weights🎞️](#open-source-training-records-and-weights️)
+- [Related Projects🔗](#related-projects)
+- [Cite our work📝](#cite-our-work)
+
 
 ## Overview🔍
 <div align="center">
