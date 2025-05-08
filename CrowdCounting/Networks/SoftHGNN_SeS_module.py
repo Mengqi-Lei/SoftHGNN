@@ -4,14 +4,14 @@ import torch.nn.functional as F
 import math
 
 class SparseSoftHyperedgeGeneration(nn.Module):
-    def __init__(self, node_dim, num_hyperedges, k, num_fixed_hyperedges=0,
+    def __init__(self, node_dim, num_dyn_hyperedges, k, num_fixed_hyperedges=0,
                  num_heads=4, dropout=0.1):
         super().__init__()
         self.num_heads = num_heads
-        self.num_hyperedges = num_hyperedges  
+        self.num_dyn_hyperedges = num_dyn_hyperedges  
         self.k = k
         self.num_fixed_hyperedges = num_fixed_hyperedges
-        self.total_hyperedges = num_fixed_hyperedges + num_hyperedges  
+        self.total_hyperedges = num_fixed_hyperedges + num_dyn_hyperedges  
         self.head_dim = node_dim // num_heads
 
         self.prototype_base = nn.Parameter(torch.Tensor(self.total_hyperedges, node_dim))
@@ -65,16 +65,16 @@ class SparseSoftHyperedgeGeneration(nn.Module):
         B = self.last_mask.shape[0]
         dynamic_mask = self.last_mask[:, :, self.num_fixed_hyperedges:]  
         global_activation = dynamic_mask.squeeze(1).mean(dim=0) 
-        target = self.k / self.num_hyperedges
+        target = self.k / self.num_dyn_hyperedges
         return ((global_activation - target) ** 2).mean()
 
 class SoftHGNN_SeS(nn.Module):
-    def __init__(self, embed_dim, num_hyperedges=64, top_k=16, num_fixed_hyperedges=8,
+    def __init__(self, embed_dim, num_dyn_hyperedges=64, top_k=16, num_fixed_hyperedges=8,
                  num_heads=8, dropout=0.1, lb_loss_weight=1.0):
         super().__init__()
         self.edge_generator = SparseSoftHyperedgeGeneration(
             node_dim=embed_dim,
-            num_hyperedges=num_hyperedges,
+            num_dyn_hyperedges=num_dyn_hyperedges,
             k=top_k,
             num_fixed_hyperedges=num_fixed_hyperedges,
             num_heads=num_heads,
