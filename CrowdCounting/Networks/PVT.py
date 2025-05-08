@@ -67,7 +67,7 @@ class Regression(nn.Module):
                 dropout=0.1
             )
             self.hyper_module = self.softhgnn
-        elif module_choice == 'SoftHGNN-SeS':
+        elif add_module_choice == 'SoftHGNN-SeS':
             self.softhgnn_ses = SoftHGNN_SeS(
                 embed_dim=256, 
                 num_dyn_hyperedges=32, 
@@ -77,7 +77,7 @@ class Regression(nn.Module):
                 dropout=0.1, 
                 lb_loss_weight=0.1)
             self.hyper_module = self.softhgnn_ses
-        elif module_choice == 'none':
+        elif add_module_choice == 'none':
             self.hyper_module = None
         else:
             raise ValueError(f"Unsupported module choice: {module_choice}")
