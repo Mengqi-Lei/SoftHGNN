@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="assets/icon.png" width="120" style="margin-bottom: 0.2;"/>
+    <img src="assets/icon.png" width="110" style="margin-bottom: 0.2;"/>
 <p>
 <h2 align="center">SoftHGNN: Soft Hypergraph Neural Networks for General Visual Recognition</h2>
 
