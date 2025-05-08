@@ -297,7 +297,7 @@ Our code refers to the following open-source projects, and we appreciate their c
 - [🔗 Crowd Counting-CCTrans](https://github.com/wfs123456/CCTrans)
 - [🔗 Object Detection-Ultralytics](https://github.com/ultralytics/ultralytics)
 - [🔗 Object Detection-YOLOv12](https://github.com/sunsmarterjie/yolov12)
-- [🔗 More wonderful works about Hypergraph Computation and more 💭](https://github.com/iMoonLab)
+- [🔗 Other wonderful works about Hypergraph Computation and more 💭](https://github.com/iMoonLab)
 
 
 ## Cite our work📝
