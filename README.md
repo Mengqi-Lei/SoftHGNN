@@ -346,12 +346,12 @@ val: /path/to/images/val2017
 
 #### 3. Training 
 
-In addition to the YOLO series, we provide YOLO11-SoftHGNN and YOLOv12-SoftHGNN models in scales `n`, `s`, and `m`. After specifying the `YAML` path, you can train them using the following script. The models we defined are in `/ultralytics/cfg/models/11-SoftHGNN/yolov11-SoftHGNN.yaml` and `/ultralytics/cfg/models/v12-SoftHGNN/yolov12-SoftHGNN.yaml`.
+In addition to the YOLO series, we provide YOLO11-SoftHGNN and YOLOv12-SoftHGNN models in scales N(nano), S(small), and M(middle). After specifying the `YAML` path, you can train them using the following script. The models we defined are in `/ultralytics/cfg/models/11-SoftHGNN/yolo11-SoftHGNN.yaml` and `/ultralytics/cfg/models/v12-SoftHGNN/yolov12-SoftHGNN.yaml`.
 ##### The train.py script
 ```python
 from ultralytics import YOLO
 
-model = YOLO('./ultralytics/cfg/models/v12-SoftHGNN/yolov12-SoftHGNNn.yaml')     #'n' means scale n
+model = YOLO('./ultralytics/cfg/models/v12-SoftHGNN/yolov12-SoftHGNNn.yaml')     #'n' means scale N(nano)
 
 # Train the model
 results = model.train(
