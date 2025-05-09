@@ -34,7 +34,7 @@ def parse_args():
                         help='sinkhorn iterations')
     parser.add_argument('--norm-cood', type=int, default=0, help='whether to norm cood when computing distance')
     parser.add_argument('--backbone', choices=['PVT', 'ALTGVT'], default='PVT', help='backbone selection: PVT or ALTGVT')
-    parser.add_argument('--add_module', choices=['SoftHGNN', 'SoftHGNN-SeS', 'None'], default='SoftHGNN-SeS', 
+    parser.add_argument('--add_module', choices=['SoftHGNN', 'SoftHGNN-SeS', 'None'], default='SoftHGNN', 
                         help='core module proposed in the paper: SoftHGNN, SoftHGNN-SeS, or None')
     parser.add_argument('--run-name', default='CCTrans', help='run name for wandb interface/logging')
     parser.add_argument('--wandb', default=0, type=int, help='boolean to set wandb logging')
