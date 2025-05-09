@@ -21,6 +21,7 @@
   - [3. Object Detection](#3-object-detection-1)
   - [4. Computational Efficiency](#4-computational-efficiency)
 - [Getting Started🚀](#getting-started)
+  - [The Basic SoftHGNN Module](#the-basic-softhgnn-module)
   - [Image Classification](#image-classification)
     - [1. Environment Setup](#1-environment-setup)
     - [2. Data Preparation](#2-data-preparation)
@@ -30,7 +31,9 @@
     - [2. Data Preparation](#2-data-preparation-1)
     - [3.Training](#3training)
   - [ObjectDetection](#objectdetection)
-    - [The train.py script](#the-trainpy-script)
+    - [1. Environment Setup](#1-environment-setup-2)
+    - [2. Data Preparation](#2-data-preparation-2)
+    - [3. Training](#3-training)
 - [Open-Source Training Records and Weights🎞️](#open-source-training-records-and-weights️)
 - [Related Projects🔗](#related-projects)
 - [Cite our work📝](#cite-our-work)
@@ -187,6 +190,11 @@ Note: "(rep)" indicates results reproduced under consistent conditions.
 
 
 ## Getting Started🚀
+
+### The Basic SoftHGNN Module
+
+SoftHGNN is a **plug-and-play** module that efficiently models **high-order visual semantic associations**. It has broad applicability for visual recognition tasks.
+To facilitate the easy integration of SoftHGNN into your own models, we provide basic implementations of the `SoftHGNN` module and the `SoftHGNN-SeS` module ( the version with sparse soft hyperedge selection) in the `SoftHGNN_BasicModule` folder. 
 
 ### Image Classification
 
@@ -346,12 +354,14 @@ val: /path/to/images/val2017
 
 #### 3. Training 
 
-In addition to the YOLO series, we provide YOLO11-SoftHGNN and YOLOv12-SoftHGNN models in scales N(nano), S(small), and M(middle). After specifying the `YAML` path, you can train them using the following script. The models we defined are in `/ultralytics/cfg/models/11-SoftHGNN/yolo11-SoftHGNN.yaml` and `/ultralytics/cfg/models/v12-SoftHGNN/yolov12-SoftHGNN.yaml`.
-##### The train.py script
+In addition to the original YOLO series, we provide YOLO11-SoftHGNN and YOLOv12-SoftHGNN models in scales N(nano), S(small), and M(middle). After specifying the model's `YAML` path, you can train them easily using the following script. The models we defined are in `/ultralytics/cfg/models/11-SoftHGNN/yolo11-SoftHGNN.yaml` and `/ultralytics/cfg/models/v12-SoftHGNN/yolov12-SoftHGNN.yaml`.
+
+Here is the `train.py` script:
 ```python
 from ultralytics import YOLO
 
-model = YOLO('./ultralytics/cfg/models/v12-SoftHGNN/yolov12-SoftHGNNn.yaml')     #'n' means scale N(nano)
+model = YOLO('./ultralytics/cfg/models/v12-SoftHGNN/yolov12-SoftHGNNn.yaml')     
+#'n' means scale N(nano), if you want to train other scales, just directly change the postfix in the model path. For exampler, yolov12-SoftHGNNs.yaml.
 
 # Train the model
 results = model.train(
@@ -368,10 +378,25 @@ results = model.train(
 )
 ```
 
+After setting the `train.py` script, you can run the training process using the following command.
+
+**Single GPU**:
+```bash
+python train.py
+```
+
+**Multi-GPU**:
+```bash
+torchrun --nproc_per_node 4 --master_port 29501 train.py  # 4 GPUs
+```
+Here, we use `torchrun` to run the training process on 4 GPUs. You can adjust the number of GPUs according to your needs. `--nproc_per_node` specifies the number of GPUs to use, and `--master_port` sets the port for communication between processes.
+
+
 ## Open-Source Training Records and Weights🎞️
 
 To facilitate the reproduction of the Crowd Counting and Object Detection tasks, we have open-sourced all training records and weight files. You can download them from either Baidu Netdisk or Google Drive:
-Coming Soon...
+
+Coming Soon in weeks...
 
 ## Related Projects🔗
 
