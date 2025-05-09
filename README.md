@@ -293,7 +293,7 @@ python train.py --data-dir $DATA_ROOT \
 ### ObjectDetection
 #### 1. Environment Setup
 
-Use the `requirements.txt` file in the `ObjectDetection` folder to install all necessary dependencies by running this command:
+You can complete the environment setup with the following command.
 
 ```bash
 wget https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.3/flash_attn-2.7.3+cu11torch2.2cxx11abiFALSE-cp311-cp311-linux_x86_64.whl
