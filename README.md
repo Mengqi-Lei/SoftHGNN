@@ -362,7 +362,7 @@ Here is the `train.py` script:
 from ultralytics import YOLO
 
 model = YOLO('./ultralytics/cfg/models/v12-SoftHGNN/yolov12-SoftHGNNn.yaml')     
-#'n' means scale N(nano), if you want to train other scales, just directly change the postfix in the model path. For exampler, yolov12-SoftHGNNs.yaml.
+#'n' means scale N(nano). If you want to train other scales, just directly change the postfix in the model path. For example, 'yolov12-SoftHGNNs.yaml'.
 
 # Train the model
 results = model.train(
