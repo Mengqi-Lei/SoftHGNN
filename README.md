@@ -197,6 +197,8 @@ Note: "(rep)" indicates results reproduced under consistent conditions.
 SoftHGNN is a **plug-and-play** module that efficiently models **high-order visual semantic associations**. It has broad applicability for visual recognition tasks.
 To facilitate the easy integration of SoftHGNN into your own models, we provide basic implementations of the `SoftHGNN` module and the `SoftHGNN-SeS` module ( the version with sparse soft hyperedge selection) in the `SoftHGNN_BasicModule` folder. 
 
+Based on experience, we recommend starting with the following parameter settings: set the number of heads to 4 or 8, and the number of soft hyperedges to 8, 16 or 32.
+
 ### Image Classification
 
 #### 1. Environment Setup
