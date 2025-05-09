@@ -273,8 +273,8 @@ DATA_ROOT/
         |->test_data/  
 ```
 #### 3.Training
-The network can be trained using the train.py script. You may choose to train on either the ShanghaiTech Part-A or Part-B dataset. Two backbone architectures are supported: Pyramid ViT ('PVT') and Twins-PCPVT ('ALTGVT'). In the add_module option, selecting 'None' indicates that no additional modules beyond CCTrans will be added, which serves as the baseline. Alternatively, you can choose the proposed 'SoftHGNN' or 'SoftHGNN-SeS' modules. By default, we use 'PVT' as the backbone and 'SoftHGNN-SeS' as the additional module for the overall network architecture.
-```
+The network can be trained using the `train.py` script. You may choose to train on either the ShanghaiTech Part-A or Part-B dataset. Two backbone architectures are supported: Pyramid ViT (`'PVT'`) and Twins-PCPVT (`'ALTGVT'`). In the `add_module` option, selecting `'None'` indicates that no additional modules beyond CCTrans will be added, which serves as the baseline. Alternatively, you can choose the proposed `'SoftHGNN'` or `'SoftHGNN-SeS'` modules. By default, we use `'PVT'` as the backbone and `'SoftHGNN-SeS'` as the additional module for the overall network architecture.
+```bash
 python train.py --data-dir $DATA_ROOT \
     --dataset 'sha' \               # or 'shb'
     --lr 0.00001 \
@@ -288,7 +288,7 @@ python train.py --data-dir $DATA_ROOT \
 
 ### ObjectDetection
 #### The train.py script
-```
+```python
 from ultralytics import YOLO
 
 model = YOLO('./ultralytics/cfg/models/v12-SoftHGNN/yolov12-SoftHGNNn.yaml')
