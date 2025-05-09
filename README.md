@@ -5,7 +5,7 @@
 
 
 <div align="center">
-    <img src="assets/intro.jpg" width="80%" height="80%">
+    <img src="assets/intro.jpg" width="90%" height="90%">
 </div>
 
 <h4>Table of Contents</h4>
