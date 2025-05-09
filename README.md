@@ -374,7 +374,7 @@ results = model.train(
   mosaic=1.0,
   mixup=0.0,  # S:0.05; M:0.15; L:0.15; X:0.2
   copy_paste=0.1,  # S:0.15; M:0.4; L:0.5; X:0.6
-  device="0,1,2,3",
+  device="0,1,2,3",  # "0",if using single GPU 
   project='runs_yolov12-SoftHGNN'     #You can customize the name for saving the training results.
 )
 ```
