@@ -259,6 +259,7 @@ matplotlib
 It is worth noting the version of timm.
 
 #### 2. Data Preparation
+
 After downloading the ShanghaiTech Part-A and Part-B crowd counting datasets, we organize them according to the following structure respectively:
 ```
 DATA_ROOT/
@@ -273,7 +274,9 @@ DATA_ROOT/
         |    |    |->... 
         |->test_data/  
 ```
+
 #### 3.Training
+
 The network can be trained using the `train.py` script. You may choose to train on either the ShanghaiTech Part-A or Part-B dataset. Two backbone architectures are supported: Pyramid ViT (`'PVT'`) and Twins-PCPVT (`'ALTGVT'`). In the `add_module` option, selecting `'None'` indicates that no additional modules beyond CCTrans will be added, which serves as the baseline. Alternatively, you can choose the proposed `'SoftHGNN'` or `'SoftHGNN-SeS'` modules. By default, we use `'PVT'` as the backbone and `'SoftHGNN'` as the additional module for the overall network architecture.
 ```bash
 python train.py --data-dir $DATA_ROOT \
@@ -288,15 +291,71 @@ python train.py --data-dir $DATA_ROOT \
 ```
 
 ### ObjectDetection
-#### The train.py script
+#### 1. Environment Setup
+
+Use the `requirements.txt` file in the `ObjectDetection` folder to install all necessary dependencies by running this command:
+
+```bash
+wget https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.3/flash_attn-2.7.3+cu11torch2.2cxx11abiFALSE-cp311-cp311-linux_x86_64.whl
+conda create -n yolo_softhgnn python=3.11
+conda activate yolo_softhgnn
+pip install -r requirements.txt
+pip install -e .
+```
+
+The core libraries we used are as follows:
+```text
+torch==2.2.2 
+torchvision==0.17.2
+flash_attn-2.7.3+cu11torch2.2cxx11abiFALSE-cp311-cp311-linux_x86_64.whl
+timm==1.0.14
+albumentations==2.0.4
+onnx==1.14.0
+onnxruntime==1.15.1
+pycocotools==2.0.7
+PyYAML==6.0.1
+scipy==1.13.0
+onnxslim==0.1.31
+onnxruntime-gpu==1.18.0
+gradio==4.44.1
+opencv-python==4.9.0.80
+psutil==5.9.8
+py-cpuinfo==9.0.0
+huggingface-hub==0.23.2
+safetensors==0.4.3
+numpy==1.26.4
+```
+
+#### 2. Data Preparation
+
+Once the MSCOCO dataset is ready, we organize it using the following structure.
+```
+DATA_ROOT/
+        |->images/
+        |    |->train2017/
+        |    |->val2017/
+        |->lables/
+        |    |->train2017/
+        |    |->val2017/
+```
+Then, specify the corresponding dataset paths in the `/ultralytics/cfg/datasets/coco.yaml` file. For example,
+```
+train: /path/to/images/train2017
+val: /path/to/images/val2017
+```
+
+#### 3. Training 
+
+In addition to the YOLO series, we provide YOLO11-SoftHGNN and YOLOv12-SoftHGNN models in scales n, s, and m. After specifying the `YAML` path, you can train them using the following script. The models we defined are in `/ultralytics/cfg/models/11-SoftHGNN/yolov11-SoftHGNN.yaml` and `/ultralytics/cfg/models/v12-SoftHGNN/yolov12-SoftHGNN.yaml`.
+##### The train.py script
 ```python
 from ultralytics import YOLO
 
-model = YOLO('./ultralytics/cfg/models/v12-SoftHGNN/yolov12-SoftHGNNn.yaml')
+model = YOLO('./ultralytics/cfg/models/v12-SoftHGNN/yolov12-SoftHGNNn.yaml')     #'n' means scale
 
 # Train the model
 results = model.train(
-  data='coco.yaml',
+  data='/path/to/coco.yaml',
   epochs=600, 
   batch=256, 
   imgsz=640,
@@ -305,10 +364,9 @@ results = model.train(
   mixup=0.0,  # S:0.05; M:0.15; L:0.15; X:0.2
   copy_paste=0.1,  # S:0.15; M:0.4; L:0.5; X:0.6
   device="0,1,2,3",
-  project='runs_yolov12-SoftHGNN'
+  project='runs_yolov12-SoftHGNN'     #You can customize the name for saving the training results.
 )
 ```
-
 
 ## Open-Source Training Records and Weights🎞️
 
