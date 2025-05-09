@@ -171,6 +171,7 @@ Note: "(rep)" indicates results reproduced under consistent conditions.
 <div>
     <img src="assets/vis.jpg" width="95%" height="95%">
 </div>
+
 **Figure 2. Visualization results of the input image, the ground truth, and the detection results of YOLO11-N, YOLO11-SoftHGNN-N, YOLOv12-N and YOLOv12-SoftHGNN-N.**
 
 
