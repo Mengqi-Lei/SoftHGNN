@@ -273,7 +273,7 @@ DATA_ROOT/
         |->test_data/  
 ```
 #### 3.Training
-The network can be trained using the `train.py` script. You may choose to train on either the ShanghaiTech Part-A or Part-B dataset. Two backbone architectures are supported: Pyramid ViT (`'PVT'`) and Twins-PCPVT (`'ALTGVT'`). In the `add_module` option, selecting `'None'` indicates that no additional modules beyond CCTrans will be added, which serves as the baseline. Alternatively, you can choose the proposed `'SoftHGNN'` or `'SoftHGNN-SeS'` modules. By default, we use `'PVT'` as the backbone and `'SoftHGNN-SeS'` as the additional module for the overall network architecture.
+The network can be trained using the `train.py` script. You may choose to train on either the ShanghaiTech Part-A or Part-B dataset. Two backbone architectures are supported: Pyramid ViT (`'PVT'`) and Twins-PCPVT (`'ALTGVT'`). In the `add_module` option, selecting `'None'` indicates that no additional modules beyond CCTrans will be added, which serves as the baseline. Alternatively, you can choose the proposed `'SoftHGNN'` or `'SoftHGNN-SeS'` modules. By default, we use `'PVT'` as the backbone and `'SoftHGNN'` as the additional module for the overall network architecture.
 ```bash
 python train.py --data-dir $DATA_ROOT \
     --dataset 'sha' \               # or 'shb'
@@ -283,7 +283,7 @@ python train.py --data-dir $DATA_ROOT \
     --batch-size 8 \
     --device '0' \
     --backbone 'PVT' \              #or 'ALTGVT'
-    --add_module 'SoftHGNN-SeS'     # Options: 'SoftHGNN-SeS', 'SoftHGNN', or 'None'
+    --add_module 'SoftHGNN'     # Options: 'SoftHGNN', 'SoftHGNN-SeS', or 'None'
 ```
 
 ### ObjectDetection
