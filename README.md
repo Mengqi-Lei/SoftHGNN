@@ -300,7 +300,8 @@ DATA_ROOT/
 
 The network can be trained using the `train.py` script. You may choose to train on either the ShanghaiTech Part-A or Part-B dataset. Two backbone architectures are supported: Pyramid ViT (`'PVT'`) and Twins-PCPVT (`'ALTGVT'`). In the `add_module` option, selecting `'None'` indicates that no additional modules beyond CCTrans will be added, which serves as the baseline. Alternatively, you can choose the proposed `'SoftHGNN'` or `'SoftHGNN-SeS'` modules. By default, we use `'PVT'` as the backbone and `'SoftHGNN'` as the additional module for the overall network architecture.
 ```bash
-python train.py --data-dir $DATA_ROOT \
+python train.py \
+    --data-dir $DATA_ROOT \
     --dataset 'sha' \               # or 'shb'
     --lr 0.00001 \
     --max-epoch 4000 \
