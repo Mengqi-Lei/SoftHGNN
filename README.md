@@ -3,12 +3,16 @@
 <p>
 <h2 align="center">SoftHGNN: Soft Hypergraph Neural Networks for General Visual Recognition</h2>
 
-<div align="center">
-  <a href="https://arxiv.org/abs/2505.15325" target="_blank">
-    <img src="https://img.shields.io/badge/arXiv-2412.08345-b31b1b.svg" alt="arXiv Paper">
+<p align="center">
+  <a href="https://arxiv.org/abs/2505.15325">
+    <img src="https://img.shields.io/badge/arXiv-2505.15325-b31b1b.svg" alt="arXiv">
   </a>
-</div>
+  <a href="https://github.com/iMoonLab">
+    <img src="https://img.shields.io/badge/iMoonLab-Homepage-blueviolet.svg" alt="iMoonLab">
+  </a>
+</p>
 
+  
 
 <div align="center">
     <img src="assets/intro.jpg" width="90%" height="90%">
