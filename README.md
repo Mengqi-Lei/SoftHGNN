@@ -143,10 +143,10 @@ Note: Results in green show improvements over the baseline; red indicates a decl
 | YOLOv10-N                   |  640 × 640 | 53.8                                             | 38.5                                             |       6.7 |         1.84 |        2.3 |
 | **YOLO11-N**                |  640 × 640 | 55.3                                             | 39.4                                             |       6.5 |          1.5 |        2.6 |
 | YOLO11-N (rep)              |  640 × 640 | 53.6                                             | 38.2                                             |       6.5 |         1.59 |        2.6 |
-| + YOLO11-SoftHGNN-N (Ours)  |  640 × 640 | **55.8 <span style="color:green">(↑2.2)</span>** | **40.2 <span style="color:green">(↑2.0)</span>** |       8.0 |         1.99 |        3.2 |
+| YOLO11-SoftHGNN-N (Ours)  |  640 × 640 | **55.8 <span style="color:green">(↑2.2)</span>** | **40.2 <span style="color:green">(↑2.0)</span>** |       8.0 |         1.99 |        3.2 |
 | YOLOv12-N                   |  640 × 640 | 55.4                                             | 40.1                                             |       6.0 |         1.60 |        2.5 |
 | YOLOv12-N (rep)             |  640 × 640 | 55.1                                             | 39.6                                             |       6.0 |         1.63 |        2.5 |
-| + YOLOv12-SoftHGNN-N (Ours) |  640 × 640 | **57.0 <span style="color:green">(↑1.9)</span>** | **41.3 <span style="color:green">(↑1.7)</span>** |       7.4 |         1.99 |        3.1 |
+| YOLOv12-SoftHGNN-N (Ours) |  640 × 640 | **57.0 <span style="color:green">(↑1.9)</span>** | **41.3 <span style="color:green">(↑1.7)</span>** |       7.4 |         1.99 |        3.1 |
 
 Note: "(rep)" indicates results reproduced under consistent conditions.
 
@@ -160,10 +160,10 @@ Note: "(rep)" indicates results reproduced under consistent conditions.
 | YOLOv10-S                          | 640 × 640    | 63.0                                      | 46.3                                   |      21.6 |         2.49 |        7.2 |
 | **YOLO11-S**                       | 640 × 640    | 63.9                                      | 46.9                                   |      21.5 |           2.5 |        9.4 |
 | YOLO11-S (rep)                     | 640 × 640    | 62.2                                      | 45.6                                   |      21.5 |         2.57 |        9.4 |
-| + YOLO11-SoftHGNN-S (Ours)         | 640 × 640    | **63.8 <span style="color:green">(↑1.6)</span>** | **47.1 <span style="color:green">(↑1.5)</span>** |      27.4 |         3.16 |       12.1 |
+| YOLO11-SoftHGNN-S (Ours)         | 640 × 640    | **63.8 <span style="color:green">(↑1.6)</span>** | **47.1 <span style="color:green">(↑1.5)</span>** |      27.4 |         3.16 |       12.1 |
 | YOLOv12-S                          | 640 × 640    | 64.1                                      | 47.6                                   |      19.4 |         2.42 |        9.1 |
 | YOLOv12-S (rep)                    | 640 × 640    | 63.8                                      | 47.0                                   |      19.4 |         2.49 |        9.1 |
-| + YOLOv12-SoftHGNN-S (Ours)        | 640 × 640    | **64.8 <span style="color:green">(↑1.0)</span>** | **48.0 <span style="color:green">(↑1.0)</span>** |      25.2 |         3.17 |       11.4 |
+| YOLOv12-SoftHGNN-S (Ours)        | 640 × 640    | **64.8 <span style="color:green">(↑1.0)</span>** | **48.0 <span style="color:green">(↑1.0)</span>** |      25.2 |         3.17 |       11.4 |
 
 **Table 5. Quantitative results of medium size model object detection performance on MSCOCO dataset.**
 | Method                              | Image Size   | AP<sub>50</sub><sup>val</sup> (%)         | AP<sub>50:95</sub><sup>val</sup> (%)   | FLOPs (G) | Latency (ms) | Param. (M) |
@@ -175,10 +175,10 @@ Note: "(rep)" indicates results reproduced under consistent conditions.
 | YOLOv10-M                           | 640 × 640    | 68.1                                      | 51.1                                   |      59.1 |         4.74 |        15.4 |
 | **YOLO11-M**                        | 640 × 640    | 68.5                                      | 51.5                                   |      68.0 |           4.7 |        20.1 |
 | YOLO11-M (rep)                      | 640 × 640    | 67.3                                      | 50.5                                   |      68.0 |         5.04 |        20.1 |
-| + YOLO11-SoftHGNN-M (Ours)          | 640 × 640    | **68.1 <span style="color:green">(↑0.8)</span>** | **51.1 <span style="color:green">(↑0.6)</span>** |      85.0 |         6.07 |        25.1 |
+| YOLO11-SoftHGNN-M (Ours)          | 640 × 640    | **68.1 <span style="color:green">(↑0.8)</span>** | **51.1 <span style="color:green">(↑0.6)</span>** |      85.0 |         6.07 |        25.1 |
 | YOLOv12-M                           | 640 × 640    | 69.5                                      | 52.6                                   |      59.8 |         4.27 |        19.6 |
 | YOLOv12-M (rep)                     | 640 × 640    | 68.6                                      | 51.9                                   |      59.8 |         4.75 |        19.6 |
-| + YOLOv12-SoftHGNN-M (Ours)         | 640 × 640    | **69.2 <span style="color:green">(↑0.6)</span>** | **52.2 <span style="color:green">(↑0.3)</span>** |      80.2 |         6.01 |        26.3 |
+| YOLOv12-SoftHGNN-M (Ours)         | 640 × 640    | **69.2 <span style="color:green">(↑0.6)</span>** | **52.2 <span style="color:green">(↑0.3)</span>** |      80.2 |         6.01 |        26.3 |
 
 
 
