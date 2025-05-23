@@ -39,7 +39,7 @@ class SoftHyperedgeGeneration(nn.Module):
         logits = logits.view(B, self.num_heads, N, self.num_hyperedges).mean(dim=1) 
         logits = self.dropout(logits)   
         
-        return F.softmax(logits, dim=1)
+        return F.softmax(logits, dim=1)    # You may also try: return F.softmax(logits, dim=-1), which means normalization from different perspectives.
 
 class SoftHGNN(nn.Module):
     def __init__(self, embed_dim, num_hyperedges=16, num_heads=4, dropout=0.1):
