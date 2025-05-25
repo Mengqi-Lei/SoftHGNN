@@ -424,6 +424,11 @@ Our code refers to the following open-source projects, and we appreciate their c
 
 ## Cite our work📝
 ```bibtex
-Coming soon...
+@article{lei2025softhgnn,
+  title={SoftHGNN: Soft Hypergraph Neural Networks for General Visual Recognition},
+  author={Lei, Mengqi and Wu, Yihong and Li, Siqi and Zheng, Xinhu and Wang, Juan and Gao, Yue and Du, Shaoyi},
+  journal={arXiv preprint arXiv:2505.15325},
+  year={2025}
+}
 ```
 
