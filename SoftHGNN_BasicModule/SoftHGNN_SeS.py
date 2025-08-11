@@ -54,11 +54,9 @@ class SparseSoftHyperedgeGeneration(nn.Module):
         mask.scatter_(dim=1, index=topk_indices, src=torch.ones_like(topk_vals))
         mask = mask.unsqueeze(1) 
 
-        keep = mask.bool()       
-        logits_masked = A.masked_fill(~keep, float('-inf'))  
-        A = torch.softmax(logits_masked, dim=2) 
-
-
+        A = torch.softmax(logits, dim=1) 
+        A = A * mask 
+        
         self.last_mask = mask.detach()
         self.last_A = A.detach()
         return A
