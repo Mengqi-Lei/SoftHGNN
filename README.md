@@ -44,7 +44,6 @@
     - [1. Environment Setup](#1-environment-setup-2)
     - [2. Data Preparation](#2-data-preparation-2)
     - [3. Training](#3-training)
-- [Open-Source Training Records and Weights🎞️](#open-source-training-records-and-weights️)
 - [Related Projects🔗](#related-projects)
 - [Cite our work📝](#cite-our-work)
 
@@ -404,13 +403,6 @@ python train.py
 torchrun --nproc_per_node 4 --master_port 29501 train.py  # 4 GPUs
 ```
 Here, we use `torchrun` to run the training process on 4 GPUs. You can adjust the number of GPUs according to your needs. `--nproc_per_node` specifies the number of GPUs to use, and `--master_port` sets the port for communication between processes.
-
-
-## Open-Source Training Records and Weights🎞️
-
-To facilitate the reproduction of the Crowd Counting and Object Detection tasks, we have open-sourced all training records and weight files. You can download them from either Baidu Netdisk or Google Drive:
-
-Coming Soon in weeks...
 
 ## Related Projects🔗
 
