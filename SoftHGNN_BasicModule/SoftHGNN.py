@@ -67,4 +67,4 @@ class SoftHGNN(nn.Module):
         # use this if you want to add a learnable gate
         # X_new = self.gate * X_new
         return X + X_new
-        
+    
