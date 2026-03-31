@@ -12,6 +12,8 @@
   </a>
 </p>
 
+> **News:** 🎉 Our paper has been accepted by **International Journal of Computer Vision (IJCV)**!
+
   
 
 <div align="center">
@@ -419,7 +421,7 @@ Our code refers to the following open-source projects, and we appreciate their c
 @article{lei2025softhgnn,
   title={SoftHGNN: Soft Hypergraph Neural Networks for General Visual Recognition},
   author={Lei, Mengqi and Wu, Yihong and Li, Siqi and Zheng, Xinhu and Wang, Juan and Gao, Yue and Du, Shaoyi},
-  journal={arXiv preprint arXiv:2505.15325},
+  journal={International Journal of Computer Vision (IJCV)},
   year={2025}
 }
 ```
