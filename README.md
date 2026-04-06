@@ -12,7 +12,7 @@
   </a>
 </p>
 
-> **News:** 🎉 Our paper has been accepted by **International Journal of Computer Vision (IJCV)**!
+ **🔥News:** Our paper has been accepted by **International Journal of Computer Vision (IJCV)**!
 
   
 
