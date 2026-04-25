@@ -4,6 +4,9 @@
 <h2 align="center">SoftHGNN: Soft Hypergraph Neural Networks for General Visual Recognition</h2>
 
 <p align="center">
+  <a href="https://link.springer.com/article/10.1007/s11263-026-02841-z?utm_source=rct_congratemailt&utm_medium=email&utm_campaign=nonoa_20260424&utm_content=10.1007/s11263-026-02841-z">
+    <img src="https://img.shields.io/badge/IJCV-Paper-orange.svg" alt="IJCV Paper">
+  </a>
   <a href="https://arxiv.org/abs/2505.15325">
     <img src="https://img.shields.io/badge/arXiv-2505.15325-b31b1b.svg" alt="arXiv">
   </a>
@@ -12,7 +15,7 @@
   </a>
 </p>
 
- **🔥News:** Our paper has been accepted by **International Journal of Computer Vision (IJCV)**!
+ **🔥News:** Our paper has been published on **International Journal of Computer Vision (IJCV)**!
 
   
 
